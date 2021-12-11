@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="pt-3 pb-3">
+        <div class="container">
+            <h1 class="h2 text-center text-danger">Movies catalog</h1>
+            <div class="row">
+                <div class="avengers__left-site col">
+                    <div>
+                        <form action="https://echo.htmlacademy.ru/" method="post" id="form_submit">
+                            <input class="form-control mb-2" type="text" placeholder="Ave" aria-label="form-control example" name="input_title" id="input_title">
+                            <input class="form-control mb-2" type="text" placeholder="5" aria-label="form-control example" name="input_rating" id="input_rating">
+                        <select class="form-select mb-2" aria-label="Default select example" name="select_genre" id="select_genre">
+                            <option selected disabled hidden>All</option>
+                        </select>  
+                        <select class="form-select mb-2" aria-label="Default select example" name="sort_select" id="select_rating">
+                            <option selected disabled hidden>Sorting</option>
+                            <option value="rating-high" id="select">Rating (high to low)</option>
+							<option value="rating-low" id="select2">Rating (low to high)</option>
+                        </select> 
+                        <button class="btn btn-lg bg-primary w-100" type="submit">Search</button> 
+                        </form>
+                    </div>
+                    <h2 class="h3 mt-5">Bookmarked movies</h2>
+                    <ul class="list-group" id="list"></ul>
+                </div>
+                <div class="avengers__right-site col-8">
+                    <h3 class="h5" id="search_heading">
+                    </h3>
+                    <div class="alert alert-primary" role="alert">
+                        Uce the form on the left to search for a movie
+                    </div>
+                    <div class="d-flex flex-wrap justify-content-around" id="d-flex">     
+                    </div>
+                    <div class="btn-group mb-3 mt-2" role="toolbar" aria-label="Toolbar with button groups">
+                        <div class="btn-group me-2" role="group" aria-label="First group">
+                          <a class="btn btn-outline-primary d-inline-block" href="https://www.youtube.com/watch?v" target="blank">1</a>
+                          <a class="btn btn-outline-primary d-inline-block" href="https://www.youtube.com/watch?v" target="blank">2</a>
+                          <a class="btn btn-outline-primary d-inline-block" href="https://www.youtube.com/watch?v" target="blank">3</a>
+                          <a class="btn btn-outline-primary d-inline-block" href="https://www.youtube.com/watch?v" target="blank">4</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <template id="templete-card-movies">
+        <div class="card border-secondary me-2 mb-2 pb-2" style="width: 22rem;">
+            <img class="card-img-top" src="" height="250" alt="moies picture" id="img_card">
+            <h4 class="ms-3 card-title fw-bolder text-info" id="h4_title"></h4>
+            <p class="fs-4 ms-2 text-danger" id="year"></p>
+            <p class="fst-italic ms-1 text-warning" id="rating"></p>
+            <div class="d-flex justify-content-center">
+                <a class="btn btn-sm btn-outline-primary d-inline me-4" href="" target="blank" id="ytlink">Watch trailer</a>
+                <a class="btn btn-sm btn-outline-info d-inline me-4" href="" target="blank">More info</a>
+                <a class="btn btn-sm btn-outline-success d-inline" data-id="0" target="blank" id="bookmark"> Bookmark</a>
+            </div>
+        </div>
+    </template>
+    <template id="bookmark-templete">
+            <li class="list-group-item">
+                <p id="bookmark-title"></p>
+                <button class="btn btn-sm bg-danger text-warning" type="button" id="bookmark-remove">Remove</button>
+            </li>
+    </template>
+    <script src="./js/bootstrap.js"></script>
+    <script src="./js/movies.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
